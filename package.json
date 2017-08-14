@@ -1,0 +1,19 @@
+{
+  "name": "inclusion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "import-baby-names.js",
+  "dependencies": {
+    "json-parser": "^1.1.5",
+    "parse-json": "^2.2.0",
+    "pg": "^7.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
