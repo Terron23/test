@@ -1,8 +1,5 @@
-const sql = require('mssql');
-var http = require('http');
 
-
-const pool = new sql.ConnectionPool({
+var pool = new sql.ConnectionPool({
    user:'terron23',
    password: 'kobesmalls23',
   database: 'SSIS',
@@ -13,15 +10,9 @@ const pool = new sql.ConnectionPool({
     trustedConnection: true
   }
 })
-
-pool.connect().then(() => {
+ pool.connect().then(() => {
   //simple query
-  pool.request().query('select * from babythings', (err, result) => {
-        console.log(result)
+  pool.request().query('select top (1) from babythings', (err, result) => {
+        console.dir(result)
     })
-})
-
-
-
-
-
+ })

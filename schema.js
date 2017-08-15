@@ -10,8 +10,19 @@ var sq = new sequelize('SSIS', 'terron23', 'kobesmalls23', {
     idle: 10000
   },
 });
+var user = sq.define('User', {
+    email: {
+type: sequelize.STRING
+    },
+    password: {
+type: sequelize.STRING
+    },
+    name: {
+type: sequelize.STRING
+    }
+})
 //module.exports helps export data to ANOTHER FILE
-module.exports = sq.define('babyName', {
+var babyName = sq.define('babyName', {
     birthYear: {
         type: sequelize.INTEGER
     },
@@ -31,3 +42,10 @@ module.exports = sq.define('babyName', {
         type: sequelize.INTEGER
     }
 });
+//Need to sync table in order to create table
+user.sync()
+babyName.sync()
+module.exports = {
+    user: user,
+    babyName: babyName
+}
